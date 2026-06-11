@@ -14,6 +14,7 @@ export default function App() {
   // Editorial Feedback State
   const [feedback, setFeedback] = useState("");
   const [feedbackEmail, setFeedbackEmail] = useState("");
+  const [feedbackName, setFeedbackName] = useState("");
   const [isFeedbackSubmitted, setIsFeedbackSubmitted] = useState(false);
 
   // Smooth scroll helper
@@ -56,6 +57,7 @@ export default function App() {
     setTimeout(() => {
       setFeedback("");
       setFeedbackEmail("");
+      setFeedbackName("");
       setIsFeedbackSubmitted(false);
     }, 4000);
   };
@@ -187,6 +189,8 @@ export default function App() {
                   <input
                     type="text"
                     required
+                    value={feedbackName}
+                    onChange={(e) => setFeedbackName(e.target.value)}
                     placeholder="e.g. Coach Jackson, Cleveland"
                     className="w-full bg-[#F2F0EA]/40 border border-black/10 rounded-none p-3 text-xs sm:text-sm focus:outline-none focus:border-black focus:bg-white transition-all font-mono uppercase tracking-tight text-[#1A1A1A]"
                   />
